@@ -1,13 +1,56 @@
+@font-face {
+  font-family: "protomolecule";
+  src: url("assets/fonts/Protomolecule.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "aller";
+  src: url("assets/fonts/Aller_Bd.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "aller";
+  src: url("assets/fonts/Aller_Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "aller";
+  src: url("assets/fonts/Aller_Lt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+:root {
+  --background-color: rgba(2, 1, 2, 0.5);
+  --secondary-color: #fcb045;
+  --font-color: #E9E5F3;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "aller", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: black;
-  color: white;
+  box-sizing: border-box;
+
+  background-image: url("assets/images/stars.jpg");
+  background-size: cover;
+  background-position: 100% 75%;
+
+  color: var(--font-color);
+}
+
+h1,
+h2 {
+  font-family: "protomolecule", sans-serif;
+  font-weight: bold;
 }
 
 code {

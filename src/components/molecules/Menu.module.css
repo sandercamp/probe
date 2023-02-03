@@ -1,0 +1,11 @@
+.menu > ul {
+    list-style: none;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.menu > ul > li {
+    font-weight: bold;
+}

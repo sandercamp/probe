@@ -1,0 +1,41 @@
+.menuButton {
+    outline: none;
+    text-decoration: none;
+
+    position: relative;
+
+    border-radius: 2rem;
+    border: solid .1rem transparent;
+    padding: .5rem 1.5rem;
+
+    background-clip: padding-box;
+
+    color: white;
+
+    z-index: 1;
+}
+
+.active,
+.menuButton:active,
+.menuButton:focus,
+.menuButton:hover {
+    background: #020102;
+}
+
+.active::after,
+.menuButton:active::after,
+.menuButton:focus::after,
+.menuButton:hover::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: -.2rem;
+    border-radius: inherit;
+
+    background: linear-gradient(to right, #8E37AA 30%, #372C68);
+}

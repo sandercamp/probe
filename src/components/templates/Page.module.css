@@ -1,0 +1,19 @@
+.page {
+    display: grid;
+
+    grid-template-rows: 20vh 80vh;
+}
+
+header {
+    grid-row: 1 / 2;
+}
+
+main {
+    grid-row: 2 / 3;
+
+    overflow: auto;
+}
+
+footer {
+    //grid-row: 3 / 4;
+}

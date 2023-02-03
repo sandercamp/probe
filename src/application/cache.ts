@@ -1,3 +1,5 @@
+const storage: Storage|null = window.localStorage || null;
+
 interface ExpirableItem<T> {
     expires: Date;
     value: T
@@ -13,7 +15,7 @@ const isExpirableItem = <T>(value: unknown): value is ExpirableItem<T> => {
 
 const fromCache = <T>(key: string): T|null => {
     if (cacheIsEnabled()) {
-        const cachedItem = window.localStorage.getItem(key);
+        const cachedItem = storage.getItem(key);
 
         if (cachedItem !== null) {
             const parsedItem: T | ExpirableItem<T> = JSON.parse(cachedItem);
@@ -36,21 +38,10 @@ const toCache = (item: unknown, key: string, expires?: Date): void => {
         const isExpirable = expires instanceof Date;
         const cacheItem = isExpirable ? { expires: expires, value: item } : item;
 
-        window.localStorage.setItem(key, JSON.stringify(cacheItem));
+        storage.setItem(key, JSON.stringify(cacheItem));
     }
 }
 
-const cacheIsEnabled = (): boolean => {
-    try {
-        const key = 'test';
+const cacheIsEnabled = (): boolean => storage !== null;
 
-        window.localStorage.setItem(key, '');
-        window.localStorage.removeItem(key);
-
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
-export { fromCache, toCache };
+export { fromCache, toCache, isExpirableItem, cacheIsEnabled };

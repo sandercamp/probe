@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Image } from './types';
+import { Image } from '../types';
 import { fromCache, toCache } from './cache';
 
 const baseUrl = 'https://api.nasa.gov/';

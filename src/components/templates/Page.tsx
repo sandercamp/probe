@@ -2,14 +2,15 @@ import React, { PropsWithChildren } from 'react';
 
 import styles from './Page.module.css';
 
-const Page = ({ children }: PropsWithChildren)  => (
+import Header from '../organisms/Header';
+
+const Page: React.FC<PropsWithChildren> = ({ children })  => (
     <div className={ styles.page }>
-        <header>Header</header>
-        <nav>Navigation</nav>
+        <Header />
         <main>
             { children }
         </main>
-        <footer>Footer</footer>
+        {/*<footer>Footer</footer>*/}
     </div>
 );
 
