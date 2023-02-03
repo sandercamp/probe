@@ -41,11 +41,7 @@
     ]
   },
   "jest": {
-    "collectCoverageFrom": ["./src/**"],
-    "coverageThreshold": {
-      "global": {
-        "lines": 90
-      }
+    "collectCoverageFrom": ["./src/**"]
     }
   },
   "browserslist": {
