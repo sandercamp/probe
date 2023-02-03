@@ -12,7 +12,7 @@ beforeEach(() => {
 describe('Test custom hook', () => {
 
     it('checking default state', () => {
-        //fetchMock.mockResponseOnce(JSON.stringify('test'));
+        fetchMock.mockResponseOnce(JSON.stringify('test'));
 
         const { result } = renderHook(() => usePictureOfTheDay())
 

@@ -40,6 +40,14 @@
       }
     ]
   },
+  "jest": {
+    "collectCoverageFrom": ["./src/**"],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
