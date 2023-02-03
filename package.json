@@ -42,7 +42,6 @@
   },
   "jest": {
     "collectCoverageFrom": ["./src/**"]
-    }
   },
   "browserslist": {
     "production": [
