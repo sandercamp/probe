@@ -1,0 +1,99 @@
+$width: 2560;
+$height: 2560;
+$offset: 600px;
+
+$amountSmall: 2000;
+$sizeSmall: 1px;
+$durationSmall: 1000;
+$colorSmall: rgba(233, 229, 243, .5);
+
+$amountMedium: 1000;
+$sizeMedium: 2px;
+$durationMedium: 500;
+$colorMedium: rgba(233, 229, 243, .75);
+
+$amountLarge: 100;
+$sizeLarge: 4px;
+$durationLarge: 250;
+$colorLarge: rgba(233, 229, 243, 1);
+
+@function create-star($color) {
+  @return "#{random($width)}px #{random($height)}px #{$color}";
+}
+
+@function create-stars($n, $color) {
+  $stars: create-star($color);
+
+  @for $i from 2 through $n {
+    $stars: "#{$stars}, #{create-star($color)}";
+  }
+  @return unquote($stars);
+}
+
+@keyframes shift {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-#{$width}px) translateX(#{$height}px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 25%;
+  }
+  50% {
+    background-position: 0 75%;
+  }
+  100% {
+    background-position: 0 25%;
+  }
+}
+
+@mixin star-template($amount, $size, $duration, $color) {
+  &:before {
+    z-index: 1;
+    content: '';
+    top: -$offset;
+    left: -$offset;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: create-stars($amount, $color);
+    animation: shift #{ $duration }s linear infinite;
+  }
+
+  &:after {
+    z-index: 1;
+    content: '';
+    top: #{ $height / 2 }px;
+    left: -#{ $width / 2 }px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: create-stars($amount, $color);
+    animation: shift #{ $duration }s linear infinite #{ $duration / 2 }s;
+  }
+}
+
+.space {
+  background: radial-gradient(at bottom left, var(--secondary-color), var(--primary-color), black);
+  background-size: 100% 200%;
+
+  animation: gradient 10s ease infinite;
+}
+
+.smallStars {
+  @include star-template($amountSmall, $sizeSmall, $durationSmall, $colorSmall);
+}
+
+.mediumStars {
+  @include star-template($amountMedium, $sizeMedium, $durationMedium, $colorMedium);
+}
+
+.largeStars {
+  @include star-template($amountLarge, $sizeLarge, $durationLarge, $colorLarge);
+}

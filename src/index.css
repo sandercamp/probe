@@ -26,18 +26,6 @@
   font-style: normal;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0 25%;
-  }
-  50% {
-    background-position: 0 75%;
-  }
-  100% {
-    background-position: 0 25%;
-  }
-}
-
 :root {
   --background-color: rgba(2, 1, 2, 0.5);
   --primary-color: #372C68;
@@ -53,10 +41,6 @@ body {
 
   box-sizing: border-box;
 
-  /*background-image: url("assets/images/stars.jpg");*/
-  /*background-size: cover;*/
-  /*background-position: 100% 75%;*/
-
   background: radial-gradient(at bottom left, var(--secondary-color), var(--primary-color), black);
 
   background-size: 100% 200%;
@@ -64,6 +48,7 @@ body {
   animation: gradient 10s ease infinite;
 
   color: var(--font-color);
+
 }
 
 h1,
