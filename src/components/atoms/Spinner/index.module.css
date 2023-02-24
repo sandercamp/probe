@@ -1,0 +1,18 @@
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    height: 8rem;
+    width: 8rem;
+
+    background: conic-gradient(var(--primary-color) 0deg, var(--secondary-color) 270deg, transparent 270deg);
+    mask-image: radial-gradient(circle, transparent 3rem,red 3rem, red 4rem);
+    mask-mode: luminance;
+
+    border-radius: 50%;
+
+    animation: spin 750ms infinite linear;
+}

@@ -1,32 +1,45 @@
 .container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 2rem;
+    margin: 0;
+    height: 100%;
 
-    border-radius: .5rem;
-    width: 60%;
-    padding: 2rem;
+    position: relative;
+    overflow: hidden;
 
-    background: var(--background-color);
+    width: fit-content;
+}
+
+.container:hover figcaption {
+    transform: translate3d(0, -25%, 0);
 }
 
 .container > img {
     object-fit: scale-down;
 
-    border-radius: .5rem;
-    width: 50%;
+    transition: all 0.5s;
+}
+
+.container:hover > img {
+    opacity: .5;
 }
 
 .container > figcaption {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    position: absolute;
+    box-sizing: border-box;
 
-    width: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    padding: 1rem;
 
     font-size: .85rem;
-    text-align: left;
+    text-align: center;
+
+    transform: translate3d(0, 100%, 0);
+
+    transition: all 0.5s;
 }
 
 .container > figcaption > h3 {

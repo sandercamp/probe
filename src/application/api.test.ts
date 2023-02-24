@@ -9,6 +9,7 @@ beforeEach(() => {
 
     jest.spyOn(console, 'error').mockImplementation(() => {});
 });
+
 describe('Test custom hook', () => {
 
     it('checking default state', () => {

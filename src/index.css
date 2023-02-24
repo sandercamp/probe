@@ -26,9 +26,22 @@
   font-style: normal;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0 25%;
+  }
+  50% {
+    background-position: 0 75%;
+  }
+  100% {
+    background-position: 0 25%;
+  }
+}
+
 :root {
   --background-color: rgba(2, 1, 2, 0.5);
-  --secondary-color: #fcb045;
+  --primary-color: #372C68;
+  --secondary-color: #8E37AA;
   --font-color: #E9E5F3;
 }
 
@@ -40,9 +53,15 @@ body {
 
   box-sizing: border-box;
 
-  background-image: url("assets/images/stars.jpg");
-  background-size: cover;
-  background-position: 100% 75%;
+  /*background-image: url("assets/images/stars.jpg");*/
+  /*background-size: cover;*/
+  /*background-position: 100% 75%;*/
+
+  background: radial-gradient(at bottom left, var(--secondary-color), var(--primary-color), black);
+
+  background-size: 100% 200%;
+
+  animation: gradient 10s ease infinite;
 
   color: var(--font-color);
 }
@@ -51,9 +70,4 @@ h1,
 h2 {
   font-family: "protomolecule", sans-serif;
   font-weight: bold;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

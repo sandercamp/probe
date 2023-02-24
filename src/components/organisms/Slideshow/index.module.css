@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+
+    grid-template-columns: 5rem 1fr 5rem;
+    grid-template-rows: 100%;
+    align-items: center;
+
+    max-height: 70%;
+
+    border-radius: .5rem;
+
+    background: var(--background-color);
+}
+
+.container > button {
+    margin: .75rem;
+}

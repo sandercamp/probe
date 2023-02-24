@@ -1,0 +1,37 @@
+.arrow {
+    appearance: none;
+    border: unset;
+
+    cursor: pointer;
+
+    opacity: 20%;
+
+    background: transparent;
+
+    transition: opacity 300ms ease;
+}
+
+.arrow:hover {
+    opacity: 50%;
+}
+
+.arrow.right {
+    transform: rotate(0);
+}
+
+.arrow.left {
+    transform: rotate(-180deg);
+}
+
+.arrow.up {
+    transform: rotate(-90deg);
+}
+
+.arrow.down {
+    transform: rotate(90deg);
+}
+
+.arrow > svg {
+    width: 100%;
+    fill: var(--font-color);
+}

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren ,} from 'react';
 
-import styles from './Menu.module.css';
+import styles from './index.module.css';
 
 const Menu: React.FC<PropsWithChildren> = ({ children }) => {
     if (React.Children.count(children) === 0) {

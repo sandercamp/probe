@@ -1,7 +1,10 @@
 .page {
     display: grid;
 
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows: 15vh 85vh;
+
+    height: 100vh;
+    overflow: hidden;
 }
 
 header {
@@ -11,9 +14,5 @@ header {
 main {
     grid-row: 2 / 3;
 
-    overflow: auto;
-}
-
-footer {
-    //grid-row: 3 / 4;
+    height: 85vh;
 }

@@ -17,3 +17,17 @@ export const Default = Template.bind({});
 Default.args = {
     text: 'MenuButton'
 };
+
+export const Active = Template.bind({});
+
+Active.args = {
+    text: 'MenuButton',
+    active: true
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+    text: 'MenuButton',
+    disabled: true
+}

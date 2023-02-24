@@ -2,14 +2,13 @@ import React from 'react';
 
 import styles from './PictureOfTheDay.module.css';
 
-import Image from '../molecules/Image';
-import Page from '../templates/Page';
-
 import { usePictureOfTheDay } from '../../application/api';
 
+import Slideshow from '../organisms/Slideshow';
+import Page from '../templates/Page';
 
 const PictureOfTheDay: React.FC = () => {
-    const image = usePictureOfTheDay();
+    const [ image, toNext, toPrevious, hasNext, hasPrevious ] = usePictureOfTheDay();
 
     if (image === null) {
         // TODO: Implement loader
@@ -18,17 +17,18 @@ const PictureOfTheDay: React.FC = () => {
 
     return (
         <Page>
-            <div
-                className={ styles.potd }
+            <article
+                className={ styles.content }
             >
                 <h2>Picture of the day</h2>
-                <Image
-                    src={ image.url }
-                    alt={ image.title }
-                    title={ `${ image.title } | ${ image.date }` }
-                    caption={ image.explanation }
+                <Slideshow
+                    currentImage={ image }
+                    onPrevious={ toPrevious }
+                    onNext={ toNext }
+                    hasNext={ hasNext }
+                    hasPrevious={ hasPrevious }
                 />
-            </div>
+            </article>
         </Page>
     );
 }

@@ -15,12 +15,15 @@ const Header: React.FC = () => (
             />
             <MenuButton
                 text={ 'NeoWs'}
+                disabled={ true }
             />
             <MenuButton
                 text={ 'Moon Trek'}
+                disabled={ true }
             />
             <MenuButton
                 text={ 'Library'}
+                disabled={ true }
             />
         </Menu>
     </header>

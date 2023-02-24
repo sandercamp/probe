@@ -1,3 +1,15 @@
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 .menuButton {
     outline: none;
     text-decoration: none;
@@ -16,16 +28,18 @@
 }
 
 .active,
-.menuButton:active,
-.menuButton:focus,
-.menuButton:hover {
+.menuButton[aria-disabled="false"]:active,
+.menuButton[aria-disabled="false"]:focus,
+.menuButton[aria-disabled="false"]:hover {
     background: #020102;
 }
 
+
+
 .active::after,
-.menuButton:active::after,
-.menuButton:focus::after,
-.menuButton:hover::after {
+.menuButton[aria-disabled="false"]:active::after,
+.menuButton[aria-disabled="false"]:focus::after,
+.menuButton[aria-disabled="false"]:hover::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -37,5 +51,13 @@
     margin: -.2rem;
     border-radius: inherit;
 
-    background: linear-gradient(to right, #8E37AA 30%, #372C68);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+.menuButton[aria-disabled="true"] {
+    cursor: not-allowed;
+
+    color: #7f7f7f;
 }
