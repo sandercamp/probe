@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
+import Placeholder from './Placeholder';
+
 import styles from './Image.module.css';
-import Spinner from '../atoms/Spinner';
 
 type ImageProps = {
     src: string;
@@ -24,15 +25,13 @@ const Image = ({ src, alt, title, caption }: ImageProps) => {
     return (
         <figure className={ styles.container }>
             { !loadComplete && (
-                <div className={ styles.placeholder }>
-                    <Spinner />
-                </div>
+                <Placeholder/>
             ) }
 
             <img
                 src={ src }
                 alt={ alt }
-                onLoad={ () => setTimeout(() => { console.log('load'); setLoadComplete(true) }, 2000) }
+                onLoad={ () => setLoadComplete(true) }
             />
             { (loadComplete && caption) && (
                 <figcaption>

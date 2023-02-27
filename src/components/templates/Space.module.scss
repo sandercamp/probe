@@ -5,27 +5,24 @@ $offset: 600px;
 $amountSmall: 2000;
 $sizeSmall: 1px;
 $durationSmall: 1000;
-$colorSmall: rgba(233, 229, 243, .5);
 
 $amountMedium: 1000;
 $sizeMedium: 2px;
 $durationMedium: 500;
-$colorMedium: rgba(233, 229, 243, .75);
 
 $amountLarge: 100;
 $sizeLarge: 4px;
 $durationLarge: 250;
-$colorLarge: rgba(233, 229, 243, 1);
 
-@function create-star($color) {
-  @return "#{random($width)}px #{random($height)}px #{$color}";
+@function create-star() {
+  @return "#{random($width)}px #{random($height)}px var(--font-color)";
 }
 
-@function create-stars($n, $color) {
-  $stars: create-star($color);
+@function create-stars($n) {
+  $stars: create-star();
 
   @for $i from 2 through $n {
-    $stars: "#{$stars}, #{create-star($color)}";
+    $stars: "#{$stars}, #{create-star()}";
   }
   @return unquote($stars);
 }
@@ -51,7 +48,7 @@ $colorLarge: rgba(233, 229, 243, 1);
   }
 }
 
-@mixin star-template($amount, $size, $duration, $color) {
+@mixin star-template($amount, $size, $duration) {
   &:before {
     z-index: 1;
     content: '';
@@ -61,7 +58,7 @@ $colorLarge: rgba(233, 229, 243, 1);
     height: $size;
     border-radius: 50%;
     position: absolute;
-    box-shadow: create-stars($amount, $color);
+    box-shadow: create-stars($amount);
     animation: shift #{ $duration }s linear infinite;
   }
 
@@ -74,7 +71,7 @@ $colorLarge: rgba(233, 229, 243, 1);
     height: $size;
     border-radius: 50%;
     position: absolute;
-    box-shadow: create-stars($amount, $color);
+    box-shadow: create-stars($amount);
     animation: shift #{ $duration }s linear infinite #{ $duration / 2 }s;
   }
 }
@@ -87,13 +84,13 @@ $colorLarge: rgba(233, 229, 243, 1);
 }
 
 .smallStars {
-  @include star-template($amountSmall, $sizeSmall, $durationSmall, $colorSmall);
+  @include star-template($amountSmall, $sizeSmall, $durationSmall);
 }
 
 .mediumStars {
-  @include star-template($amountMedium, $sizeMedium, $durationMedium, $colorMedium);
+  @include star-template($amountMedium, $sizeMedium, $durationMedium);
 }
 
 .largeStars {
-  @include star-template($amountLarge, $sizeLarge, $durationLarge, $colorLarge);
+  @include star-template($amountLarge, $sizeLarge, $durationLarge);
 }
