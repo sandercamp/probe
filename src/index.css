@@ -33,13 +33,18 @@
   --font-color: #E9E5F3;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   font-family: "aller", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  box-sizing: border-box;
 
   background: radial-gradient(at bottom left, var(--secondary-color), var(--primary-color), black);
 

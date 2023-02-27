@@ -3,11 +3,11 @@
     justify-content: space-between;
     align-items: start;
 
-    height: 10rem;
+    overflow: hidden;
+
     padding: 1rem 3rem;
 
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-
 }
 
 .header > h1 {

@@ -65,13 +65,17 @@ $durationLarge: 250;
   &:after {
     z-index: 1;
     content: '';
+    position: absolute;
+
     top: #{ $height / 2 }px;
     left: -#{ $width / 2 }px;
+
     width: $size;
     height: $size;
     border-radius: 50%;
-    position: absolute;
+
     box-shadow: create-stars($amount);
+
     animation: shift #{ $duration }s linear infinite #{ $duration / 2 }s;
   }
 }

@@ -1,39 +1,31 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Placeholder from './Placeholder';
+import Placeholder from '../Placeholder';
 
-import styles from './Image.module.css';
+import styles from './index.module.css';
 
 type ImageProps = {
     src: string;
     alt: string;
     title?: string;
     caption?: string;
+    loading: boolean;
+    onLoad: () => void;
 }
 
-const Image = ({ src, alt, title, caption }: ImageProps) => {
-    const [loadComplete, setLoadComplete] = useState(false);
-
-    console.log(loadComplete);
-
-
-    useEffect(() => {
-        setLoadComplete(false);
-
-    }, [src]);
-
+const Image = ({ src, alt, title, caption, loading, onLoad }: ImageProps) => {
     return (
         <figure className={ styles.container }>
-            { !loadComplete && (
+            { loading && (
                 <Placeholder/>
             ) }
 
             <img
                 src={ src }
                 alt={ alt }
-                onLoad={ () => setLoadComplete(true) }
+                onLoad={ onLoad }
             />
-            { (loadComplete && caption) && (
+            { (!loading && caption) && (
                 <figcaption>
                     { title && (<h3>{ title }</h3>) }
 

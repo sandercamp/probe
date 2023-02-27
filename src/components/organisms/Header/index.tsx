@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './Header.module.css';
+import styles from './index.module.css';
 
-import MenuButton from '../atoms/MenuButton';
-import Menu from '../molecules/Menu';
+import MenuButton from '../../atoms/MenuButton';
+import Menu from '../../molecules/Menu';
 
 const Header: React.FC = () => (
     <header className={ styles.header }>
