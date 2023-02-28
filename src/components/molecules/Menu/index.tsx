@@ -1,32 +1,55 @@
 import React, { PropsWithChildren ,} from 'react';
 
-import styles from './index.module.css';
+import classnames from 'classnames';
+
+import MenuIcon from '../../atoms/MenuToggleIcon';
+import MenuToggle from '../../atoms/MenuToggleIcon';
+import MenuToggleIcon from '../../atoms/MenuToggleIcon';
+
+import styles from './index.module.scss';
 
 const Menu: React.FC<PropsWithChildren> = ({ children }) => {
+    const [ open, isOpen ] = React.useState(false);
+
     if (React.Children.count(children) === 0) {
         return null;
     }
 
+    console.log(open);
+
     return (
-        <nav
-            className={ styles.menu }
-            role={ 'navigation' }
+        <div
+            className={styles.container}
         >
-            <ul
-                role={ 'menu' }
-                aria-label={ 'Main navigation' }
+            <button
+                className={ styles.menuToggle }
+                onClick={ () => isOpen(!open) }
             >
-                {
-                    React.Children.map(children, child => (
-                        <li
-                            role={ 'presentation' }
-                        >
-                            { child }
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
+                <MenuToggleIcon open={ open } />
+            </button>
+
+            <nav
+                className={ styles.menu }
+                role={ 'navigation' }
+            >
+
+                <ul
+                    className={ classnames({ [`${ styles.open }`]: open }) }
+                    role={ 'menu' }
+                    aria-label={ 'Main navigation' }
+                >
+                    {
+                        React.Children.map(children, child => (
+                            <li
+                                role={ 'presentation' }
+                            >
+                                { child }
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </div>
     );
 };
 

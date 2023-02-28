@@ -9,6 +9,8 @@
     background: transparent;
 
     transition: opacity 300ms ease;
+
+    height: 10rem;
 }
 
 .arrow:hover {
