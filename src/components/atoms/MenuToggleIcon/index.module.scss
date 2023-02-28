@@ -1,0 +1,41 @@
+.icon {
+    opacity: 50%;
+
+    display: block;
+
+    width: inherit;
+    height: inherit;
+
+    cursor: pointer;
+
+    .bar {
+        transform-origin: center;
+
+        transition: transform 0.3s ease-in-out;
+        stroke: var(--font-color);
+        stroke-width: 12.5%;
+        stroke-linecap: round;
+    }
+
+    .top {
+        transform: translateY(-40%);
+
+        &.open {
+            transform: rotate(45deg);
+        }
+    }
+
+    .middle {
+        &.open {
+            transform: scaleX(0.1);
+        }
+    }
+
+    .bottom {
+        transform: translateY(40%);
+
+        &.open {
+            transform: rotate(-45deg);
+        }
+    }
+}

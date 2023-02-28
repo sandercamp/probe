@@ -1,0 +1,72 @@
+.container {
+    position: relative;
+}
+
+.menu > ul {
+    list-style: none;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.menu > ul > li {
+    font-weight: bold;
+}
+
+.menuToggle {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        z-index: 2;
+    }
+
+    .menuToggle {
+        appearance: none;
+        border: unset;
+        padding: 0;
+
+        position: absolute;
+        top: .75rem;
+        right: 0;
+
+        background: transparent;
+
+        visibility: visible;
+
+        z-index: 3;
+
+        width: 2rem;
+        height: 2rem;
+
+        cursor: pointer;
+    }
+
+    .menu {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            padding: 10rem 1rem 0 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+
+            opacity: 0;
+
+            transition: opacity 0.5s ease-in-out;
+
+            background-color: rgba(2, 1, 2, 0.9);
+
+            &.open {
+                opacity: 1;
+            }
+        }
+    }
+}
