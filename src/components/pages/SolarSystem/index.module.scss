@@ -95,7 +95,8 @@
 
   .mercury {
     --background-color: #968c8c;
-    --order: 2;
+    --order: 1;
+    --size: var(--mercury-size);
 
     font-size: var(--mercury-size);
     animation-duration: var(--mercury-revolution-speed);
@@ -103,7 +104,8 @@
 
   .venus {
     --background-color: #f5a623;
-    --order: 1;
+    --order: 2;
+    --size: var(--venus-size);
 
     font-size: var(--venus-size);
     animation-duration: var(--venus-revolution-speed);
@@ -112,6 +114,7 @@
   .earth {
     --background-color: #4a90e2;
     --order: 3;
+    --size: var(--earth-size);
 
     font-size: var(--earth-size);
     animation-duration: var(--earth-revolution-speed);
@@ -120,6 +123,7 @@
   .mars {
     --background-color: #e24a4a;
     --order: 4;
+    --size: var(--mars-size);
 
     font-size: var(--mars-size);
     animation-duration: var(--mars-revolution-speed);
@@ -128,14 +132,16 @@
   .jupiter {
     --background-color: #e2a24a;
     --order: 5;
+    --size: var(--jupiter-size);
 
     font-size: var(--jupiter-size);
     animation-duration: var(--jupiter-revolution-speed);
   }
 
   .saturn {
-    --background-color: #e2d24a;
+    --background-color: #e2e24a;
     --order: 6;
+    --size: var(--saturn-size);
 
     font-size: var(--saturn-size);
     animation-duration: var(--saturn-revolution-speed);
@@ -144,17 +150,19 @@
   .uranus {
     --background-color: #4ae2d2;
     --order: 7;
+    --size: var(--uranus-size);
 
     font-size: var(--uranus-size);
     animation-duration: var(--uranus-revolution-speed);
   }
 
   .neptune {
-      --background-color: #4a4ae2;
-      --order: 8;
+    --background-color: #4a4ae2;
+    --order: 8;
+    --size: var(--neptune-size);
 
-      font-size: var(--neptune-size);
-      animation-duration: var(--neptune-revolution-speed);
+    font-size: var(--neptune-size);
+    animation-duration: var(--neptune-revolution-speed);
   }
 }
 
@@ -177,10 +185,19 @@
 }
 
 @keyframes shadow {
-  0%     { box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* top */ }
-  25%    { box-shadow: inset 16px 0 8px rgba(0, 0, 0, 0.5); /* left */ }
-  50%    { box-shadow: inset 40px -20px 16px rgba(0, 0, 0, 0.5); /* bottom */ }
-  50.01% { box-shadow: inset -40px -20px 16px rgba(0, 0, 0, 0.5); /* bottom */ }
-  75%    { box-shadow: inset -16px 0 8px rgba(0, 0, 0, 0.5); /* right */ }
-  100%   { box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* top */ }
+  0%, 100% {
+    box-shadow: inset 0 0 .05em rgba(0, 0, 0, 0.5); /* top */
+  }
+  25% {
+    box-shadow: inset .25em 0 .05em rgba(0, 0, 0, 0.5); /* left */
+  }
+  50% {
+    box-shadow: inset 1.05em -.75em .05em rgba(0, 0, 0, 0.5); /* bottom */
+  }
+  50.01% {
+    box-shadow: inset -1.05em -.75em .05em rgba(0, 0, 0, 0.5); /* bottom */
+  }
+  75% {
+    box-shadow: inset -.25em 0 .05em rgba(0, 0, 0, 0.5); /* right */
+  }
 }
