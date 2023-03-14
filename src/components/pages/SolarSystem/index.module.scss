@@ -95,10 +95,18 @@
 
   .mercury {
     --background-color: #968c8c;
-    --order: 1;
+    --order: 2;
 
     font-size: var(--mercury-size);
     animation-duration: var(--mercury-revolution-speed);
+  }
+
+  .venus {
+    --background-color: #f5a623;
+    --order: 1;
+
+    font-size: var(--venus-size);
+    animation-duration: var(--venus-revolution-speed);
   }
 
   .earth {
@@ -107,6 +115,46 @@
 
     font-size: var(--earth-size);
     animation-duration: var(--earth-revolution-speed);
+  }
+
+  .mars {
+    --background-color: #e24a4a;
+    --order: 4;
+
+    font-size: var(--mars-size);
+    animation-duration: var(--mars-revolution-speed);
+  }
+
+  .jupiter {
+    --background-color: #e2a24a;
+    --order: 5;
+
+    font-size: var(--jupiter-size);
+    animation-duration: var(--jupiter-revolution-speed);
+  }
+
+  .saturn {
+    --background-color: #e2d24a;
+    --order: 6;
+
+    font-size: var(--saturn-size);
+    animation-duration: var(--saturn-revolution-speed);
+  }
+
+  .uranus {
+    --background-color: #4ae2d2;
+    --order: 7;
+
+    font-size: var(--uranus-size);
+    animation-duration: var(--uranus-revolution-speed);
+  }
+
+  .neptune {
+      --background-color: #4a4ae2;
+      --order: 8;
+
+      font-size: var(--neptune-size);
+      animation-duration: var(--neptune-revolution-speed);
   }
 }
 
