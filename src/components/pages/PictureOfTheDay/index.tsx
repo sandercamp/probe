@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './PictureOfTheDay.module.css';
+import { usePictureOfTheDay } from '../../../application/api';
 
-import { usePictureOfTheDay } from '../../application/api';
+import Slideshow from '../../organisms/Slideshow';
+import Page from '../../templates/Page';
 
-import Slideshow from '../organisms/Slideshow';
-import Page from '../templates/Page';
+import styles from './index.module.css';
 
 const PictureOfTheDay: React.FC = () => {
     const [ image, toNext, toPrevious, hasNext, hasPrevious ] = usePictureOfTheDay();

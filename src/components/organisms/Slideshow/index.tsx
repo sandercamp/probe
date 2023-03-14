@@ -18,10 +18,6 @@ type SlideshowProps = {
 const Slideshow: React.FC<SlideshowProps> = ({ currentImage, hasPrevious = true, hasNext= true, onNext, onPrevious }) => {
     const [ loading, isLoading ] = useState(true);
 
-    const onClick = () => {
-        console.log('click');
-    };
-
     return (
         <div className={ styles.container }>
             { (!loading && hasPrevious) && <ArrowButton direction={ 'left' } onClick={ onPrevious } /> }

@@ -17,6 +17,6 @@ describe('Test custom hook', () => {
 
         const { result } = renderHook(() => usePictureOfTheDay())
 
-        expect(result.current).toBe(null);
+        expect(result.current[0]).toBe(null);
     })
 })
